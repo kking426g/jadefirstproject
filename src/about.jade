@@ -1,0 +1,49 @@
+mixin portfolio(title, name, intro)
+    div(class="col-md-4 fh5co-staff")
+        img(src="../images/person3.jpg" alt="Free HTML5 Bootstrap Template" class="img-responsive")
+        h3 #{title}
+        h4 #{name}
+        p #{intro}
+        ul.fh5co-social
+            li
+                a(href="#")
+                    i(class="icon-google")
+            li
+                a(href="#")
+                    i(class="icon-dribbble")
+            li
+                a(href="#")
+                    i(class="icon-twitter")
+            li
+                a(href="#")
+                    i(class="icon-facebook")
+            li
+                a(href="#")
+                    i(class="icon-instagram")
+
+doctype
+html
+    include template/head
+    body
+        div#fh5so-page
+            a(href="#", class="js-fh5co-nav-toggle fh5co-nav-toggle")
+                li
+            include template/aside
+            div#fh5co-main
+                div.fh5co-narrow-content
+                    div.row
+                        div.rol-md-5
+                            h2(class="fh5co-heading animate-box fadeInLeft animated", data-animate-effect="fadeInLeft") About Us Nitro
+                                span A Web Studio
+                            p(class="fh5co-lead animate-box fadeInLeft animated" data-animate-effect="fadeInLeft") Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.
+                            p(class="animate-box" data-animate-effect="fadeInLeft") Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.
+                        div(class="col-md-6 col-md-push-1 animate-box fadeInLeft animated" data-animate-effect="fadeInLeft")
+                            img(src="../images/img_1.jpg" alt="Free HTML5 Bootstrap Template" class="img-responsive")
+                
+                div(class="fh5co-narrow-content  animate-box fadeInLeft animated" data-animate-effect="fadeInLeft")
+                    h2.fh5co-heading The Team
+
+                    div.row
+                        +portfolio( 'Athan Smith', 'Co-Founder, CEO', 'Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.')
+                        +portfolio( 'Nathalie Kosley', 'Co-Founder, CEO', 'Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.')
+                        +portfolio( 'Yanna Kuzuki', 'Co-Founder, CEO', 'Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.')
