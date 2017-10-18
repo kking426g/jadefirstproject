@@ -1,3 +1,12 @@
+mixin portfolio(title, imageID, intro)
+    div(class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 work-item")
+        a(href="work.html")
+            img(class="img-responsive", src="#{'../images/pic/'}#{imageID}#{'.jpg'}")
+            h3.fh5co-work-title #{title} 
+            p #{intro}
+
+    div(class="clearfix visible-sm-block")
+
 include var
 doctype
 html
@@ -6,12 +15,12 @@ html
         meta(name="viewport", content="width=device-width, initial-scale=1")
         title #{title}
         link(rel="stylesheet", href="../css/animate.css")
-        link(rel="stylesheet", href="'../css/icomoon.css")
+        link(rel="stylesheet", href="../css/icomoon.css")
         link(rel="stylesheet", href="../css/bootstrap.css")
         link(rel="stylesheet", href="../css/owl.carousel.min.css")
         link(rel="stylesheet", href="../css/owl.theme.default.min.css")
         link(rel="stylesheet", href="../css/style.css")
-        script(src="/js/modernizer-2.3.4.min.js")
+        script(src="../js/modernizr-2.6.2.min.js")
     body
         div#fh5so-page
             a(href="#", class="js-fh5co-nav-toggle fh5co-nav-toggle")
@@ -50,6 +59,30 @@ html
                          li
                             a(href="#")
                                 i(class="icon-linkedin")   
-                                                   
-                                
-                                   
+
+            div#fh5co-main
+                div.fh5co-narrow-content
+                    h2(class="fh5co-heading animate-box fadeInLeft animated", date-animate-effect="fadeInLeft")  We Love To Design
+                        span See Our Portfolio
+                    div(class="row animate-box" data-animate-effect="fadeInLeft")
+                    +portfolio( 'Work Title Here', 1, 'Illustration, Branding')  
+                    +portfolio( 'Work Title Here', 2, 'Illustration, Branding')
+                    +portfolio( 'Work Title Here', 3, 'Illustration, Branding')
+                    +portfolio( 'Work Title Here', 4, 'Illustration, Branding')
+                    +portfolio( 'Work Title Here', 5, 'Illustration, Branding')
+                    +portfolio( 'Work Title Here', 6, 'Illustration, Branding')
+                    +portfolio( 'Work Title Here', 7, 'Illustration, Branding')
+                    +portfolio( 'Work Title Here', 8, 'Illustration, Branding')
+                    +portfolio( 'Work Title Here', 9, 'Illustration, Branding')
+                    +portfolio( 'Work Title Here', 10, 'Illustration, Branding')
+                    +portfolio( 'Work Title Here', 11, 'Illustration, Branding')
+                    +portfolio( 'Work Title Here', 12, 'Illustration, Branding')
+                    +portfolio( 'Work Title Here', 13, 'Illustration, Branding')
+                    +portfolio( 'Work Title Here', 14, 'Illustration, Branding')
+                    +portfolio( 'Work Title Here', 15, 'Illustration, Branding')
+
+
+
+
+                      
+
