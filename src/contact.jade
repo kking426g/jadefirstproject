@@ -1,0 +1,41 @@
+mixin repeat(info)
+    div.col-md-4
+        div(class="fh5co-feature fh5co-feature-sm animate-box", data-animate-effect="fadeInLeft")
+            div.fh5co-icon
+                li.icon-envelope-o
+            div.fh5co-text
+                p
+                    a(href="#") #{info}
+
+
+doctype
+html
+    include template/head
+    body
+        div#fh5co-page
+            a(href="#", class="js-fh5co-nav-toggle fh5co-nav-toggle dark")
+            include template/aside
+            div#h5co-main
+                div#map
+                div.fh5co-more-contact
+                    div.fh5co-narrow-content
+                        div.row
+                            +repeat('info@domain.com')
+                            +repeat('198 West 21th Street, Suite 721 New York NY 10016')
+                            +repeat('+123 456 7890')
+
+                div(class="fh5co-narrow-content animate-box" data-animate-effect="fadeInLeft") 
+                    div.row
+                        div.col-md-4
+                            h1 Get In Touch
+                    form(action="")
+                        div.row
+                            div.col-md-12
+                                div.row
+                                    div.col-md-6
+                                        div.form-group
+                                            input(type="text" class="form-control" placeholder="Name")
+                                        div.form-group
+                                            input(type="text" class="form-control" placeholder="Email")
+                                        div.form-group
+                                            input(type="text" class="form-control" placeholder="Phone")
