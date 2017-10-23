@@ -1,28 +1,30 @@
-mixin repeat(info)
+mixin repeat(name, info)
     div.col-md-4
         div(class="fh5co-feature fh5co-feature-sm animate-box", data-animate-effect="fadeInLeft")
             div.fh5co-icon
-                li.icon-envelope-o
+                li(class="#{name}")
             div.fh5co-text
                 p
                     a(href="#") #{info}
 
 
 doctype
-html
+
+html.no-js
     include template/head
     body
         div#fh5co-page
             a(href="#", class="js-fh5co-nav-toggle fh5co-nav-toggle dark")
+                i
             include template/aside
-            div#h5co-main
+            div#fh5co-main
                 div#map
                 div.fh5co-more-contact
                     div.fh5co-narrow-content
                         div.row
-                            +repeat('info@domain.com')
-                            +repeat('198 West 21th Street, Suite 721 New York NY 10016')
-                            +repeat('+123 456 7890')
+                            +repeat('icon-envelope-o','info@domain.com')
+                            +repeat('icon-map-o','198 West 21th Street, Suite 721 New York NY 10016')
+                            +repeat('icon-phone','+123 456 7890')
 
                 div(class="fh5co-narrow-content animate-box" data-animate-effect="fadeInLeft") 
                     div.row
@@ -39,3 +41,11 @@ html
                                             input(type="text" class="form-control" placeholder="Email")
                                         div.form-group
                                             input(type="text" class="form-control" placeholder="Phone")
+                                    div.col-md-6
+                                        div.form-group
+                                            textarea#message(name="", cols="30", rows="7", class="form-control",placeholder="Message")
+                                        div.form-group
+                                            input(type="submit" class="btn btn-primary btn-md" value="Send Message")
+
+
+include template/pagejs
