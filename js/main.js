@@ -60,12 +60,12 @@
 	};
 
 
-	// Animations
-
+	// Animations  waypoint is a jquery plugin
+    
 	var contentWayPoint = function() {
 		var i = 0;
 		$('.animate-box').waypoint( function( direction ) {
-
+			console.log(direction)//目前是up or down
 			if( direction === 'down' && !$(this.element).hasClass('animated') ) {
 				
 				i++;
@@ -98,31 +98,31 @@
 		} , { offset: '85%' } );
 	};
 
-	var counter = function() {
-		$('.js-counter').countTo({
-			 formatter: function (value, options) {
-	      return value.toFixed(options.decimals);
-	    },
-		});
-	};
+	// var counter = function() {
+	// 	$('.js-counter').countTo({
+	// 		 formatter: function (value, options) {
+	//       return value.toFixed(options.decimals);
+	//     },
+	// 	});
+	// };
 
-	var counterWayPoint = function() {
-		if ($('#counter-animate').length > 0 ) {
-			$('#counter-animate').waypoint( function( direction ) {
+	// var counterWayPoint = function() {
+	// 	if ($('#counter-animate').length > 0 ) {
+	// 		$('#counter-animate').waypoint( function( direction ) {
 										
-				if( direction === 'down' && !$(this.element).hasClass('animated') ) {
-					setTimeout( counter , 400);					
-					$(this.element).addClass('animated');
+	// 			if( direction === 'down' && !$(this.element).hasClass('animated') ) {
+	// 				setTimeout( counter , 400);					
+	// 				$(this.element).addClass('animated');
 						
-				}
-			} , { offset: '90%' } );
-		}
-	};
+	// 			}
+	// 		} , { offset: '90%' } );
+	// 	}
+	// };
 
+	//展開左側欄效果
 	var burgerMenu = function() {
-
 		$('.js-fh5co-nav-toggle').on('click', function(event){
-			event.preventDefault();
+			event.preventDefault();//避免bubble up
 			var $this = $(this);
 
 			if ($('body').hasClass('offcanvas')) {
@@ -133,28 +133,22 @@
 				$('body').addClass('offcanvas');	
 			}
 		});
-
-
-
 	};
 
 	// Click outside of offcanvass
 	var mobileMenuOutsideClick = function() {
-
 		$(document).click(function (e) {
 	    var container = $("#fh5co-aside, .js-fh5co-nav-toggle");
 	    if (!container.is(e.target) && container.has(e.target).length === 0) {
 
 	    	if ( $('body').hasClass('offcanvas') ) {
-
     			$('body').removeClass('offcanvas');
-    			$('.js-fh5co-nav-toggle').removeClass('active');
-			
-	    	}
-	    	
+    			$('.js-fh5co-nav-toggle').removeClass('active');		
+	    	}  	
 	    }
 		});
 
+		//滑動就關閉側選單
 		$(window).scroll(function(){
 			if ( $('body').hasClass('offcanvas') ) {
 
@@ -163,7 +157,6 @@
 			
 	    	}
 		});
-
 	};
 
 	// Document on load.
@@ -172,7 +165,7 @@
 		parallax();
 		testimonialCarousel();
 		contentWayPoint();
-		counterWayPoint();
+		//counterWayPoint();
 		burgerMenu();
 		mobileMenuOutsideClick();
 	});

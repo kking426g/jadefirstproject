@@ -1,6 +1,6 @@
-mixin portfolio(title, name, intro)
+mixin portfolio(num, title, name, intro)
     div(class="col-md-4 fh5co-staff")
-        img(src="../images/person3.jpg" alt="Free HTML5 Bootstrap Template" class="img-responsive")
+        img(src="../images/profile#{num}.gif" alt="Free HTML5 Bootstrap Template" class="img-responsive")
         h3 #{title}
         h4 #{name}
         p #{intro}
@@ -20,7 +20,6 @@ mixin portfolio(title, name, intro)
             li
                 a(href="#")
                     i(class="icon-instagram")
-
 doctype
 html
     include template/head
@@ -44,7 +43,7 @@ html
                     h2.fh5co-heading The Team
 
                     div.row
-                        +portfolio( 'Athan Smith', 'Co-Founder, CEO', 'Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.')
-                        +portfolio( 'Nathalie Kosley', 'Co-Founder, CEO', 'Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.')
-                        +portfolio( 'Yanna Kuzuki', 'Co-Founder, CEO', 'Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.')
+                        +portfolio(1, 'Athan Smith', 'Co-Founder, CEO', 'Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.')
+                        +portfolio(2, 'Nathalie Kosley', 'Co-Founder, CEO', 'Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.')
+                        +portfolio(3, 'Yanna Kuzuki', 'Co-Founder, CEO', 'Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.')
 include template/pagejs
